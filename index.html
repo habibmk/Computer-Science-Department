@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Computer Science</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        nav a:not(:last-child):after {
+            content: "|";
+            margin-left: 5px;
+        }
+
+        .banner {
+            padding: 2rem;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .announcements,
+        .featured-courses,
+        .quick-links {
+            padding: 2rem;
+        }
+
+        .section-title {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .course-item,
+        .quick-link-item {
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 2rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Slideshow styles */
+        .slideshow-container {
+            max-width: 100%;
+            position: center;
+            margin-top: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        /* Modal-like notification */
+        .notification-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .notification {
+            position: relative;
+            max-width: 400px;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 10000;
+        }
+
+        .notification p {
+            margin: 0;
+        }
+
+        .cancel-btn {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: italic;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: row;
+            }
+
+            nav a {
+                padding: 10px;
+            }
+
+            .banner {
+                padding: 1rem;
+            }
+
+            .announcements,
+            .featured-courses,
+            .quick-links {
+                padding: 1rem;
+            }
+
+            .notification {
+                max-width: 90%;
+                padding: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 0.5rem 1rem;
+            }
+
+            nav a {
+                padding: 4px;
+            }
+
+            .banner {
+                padding: 0.5rem;
+            }
+
+            .announcements,
+            .featured-courses,
+            .quick-links {
+                padding: 0.5rem;
+            }
+
+            .notification {
+                padding: 0.5rem;
+            }
+        }
+
+        /* Default font size for desktop */
+        nav a {
+            font-size: 16px;
+        }
+
+        /* Font size for mobile */
+        @media (max-width: 600px) {
+            nav a {
+                font-size: 12px;
+            }
+        }
+    </style>
+
+    <script>
+        var slideIndex = 0;
+
+        function showSlides() {
+            var slides = document.getElementsByClassName("mySlides");
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex - 1].style.display = "block";
+            slides[slideIndex - 1].style.animation = "slideIn 1s ease";
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+
+        // Function to show the notification on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            showSlides();
+            showNotification();
+        });
+
+        // Function to show the notification
+        function showNotification() {
+            var overlay = document.getElementById('notificationOverlay');
+            var notification = document.getElementById('notification');
+            overlay.style.display = 'flex'; // show overlay
+            notification.style.display = 'block'; // show notification
+        }
+
+        // Function to hide the notification
+        function hideNotification() {
+            var overlay = document.getElementById('notificationOverlay');
+            var notification = document.getElementById('notification');
+            overlay.style.display = 'none'; // hide overlay
+            notification.style.display = 'none'; // hide notification
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Department of Computer Science</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="https://gsu.edu.ng/home/staff-list-73/">Staffs</a>
+        <a href="Courses.html">Courses</a>
+        <a href="NACOS.html">NACOS</a>
+        <a href="https://briateksms.com/gsu">Student Portal</a>
+    </nav>
+
+    <div class="banner">
+        <h2>Welcome to the Department of Computer Science</h2>
+        <p>Your journey to excellence in computer science begins here!</p>
+    </div>
+
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="web images/Gallery/ICT ENTRANCE.jpeg" alt="Slide 1">
+        </div>
+        <div class="mySlides">
+            <img src="web images/Gallery/LABS.jpeg" alt="Slide 2">
+        </div>
+        <div class="mySlides">
+            <img src="web images/Gallery/NITDA2.jpeg" alt="Slide 3">
+        </div>
+        <div class="mySlides">
+            <img src="web images/Gallery/NITDA.jpeg" alt="Slide 4">
+        </div>
+        <div class="mySlides">
+            <img src="web images/Gallery/VISUAL REALITY-BASED.jpeg" alt="Slide 5">
+        </div>
+        <div class="mySlides">
+            <img src="web images/Gallery/ICT COMP. LAB.jpeg" alt="Slide 6">
+        </div>
+    </div>
+
+    <div class="featured-courses">
+        <h3 class="section-title">Featured Courses</h3>
+        <div class="course-item">
+            <h4>Introduction to Computer Science (COSC 101)</h4>
+            <p>A beginner's guide to the world of computer science.</p>
+        </div>
+        <div class="course-item">
+            <h4>Data Structures and Algorithms (COSC 208)</h4>
+            <p>Learn about essential data structures and algorithms.</p>
+        </div>
+        <div class="course-item">
+            <h4>Web Development (C0SC 319)</h4>
+            <p>Build dynamic and responsive websites from scratch.</p>
+        </div>
+    </div>
+
+    <div class="quick-links">
+        <h3 class="section-title">Quick Links</h3>
+        <div class="quick-link-item">
+            <a href="https://gsu.edu.ng/home/admissions/">Admission</a>
+        </div>
+        <div class="quick-link-item">
+            <a href="About.html">About - Us</a>
+        </div>
+        <div class="quick-link-item">
+            <a href="https://gsu.edu.ng/home/upcoming-events/">Up Coming Events </a>
+        </div>
+    </div>
+
+    <!-- Modal-like notification -->
+    <div id="notificationOverlay" class="notification-overlay">
+        <div id="notification" class="notification">
+            <span class="cancel-btn" onclick="hideNotification()">X</span>
+            <marquee direction="up" scrollamount="5" scrolldelay="250">
+                <p>
+                    <strong>Date: 08th July, 2024.</strong><br><br>
+                    <strong>SUBMISSION OF SIGNED COURSE REGISTRATION FORMS</strong><br><br>
+
+                    The department has observed that a significant number of students have not yet submitted their
+                    course registration forms.<br><br>
+
+                    Consequently, a final deadline has been set for the submission of signed course registration forms,
+                    which is <strong>Thursday, 1st August 2024.</strong><br><br>
+                    Students are required to submit the forms to their respective level coordinators by this date.
+                    Please note that compliance with this requirement is mandatory.<br><br>
+
+                    Thank you.<br><br><br>
+                    Yours Sincerely,<br>
+                    Muhammad Dawaki<br>
+                    Department Registration Officer.<br><br>
+
+                    Send your feedback regarding this website to: <a href=”https://t.me/habib_Mk”>Telegram</a> or <a
+                        href=”https:/wa.me/+2349061282828”>WhatsApp</a>.<br><br>
+                </p>
+            </marquee>
+        </div>
+    </div><br><br><br><br><br>
+
+    <footer style="font-size: 10px; text-align: center;">
+        <p>&copy; 2024 Department of Computer Science. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

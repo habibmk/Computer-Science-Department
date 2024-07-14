@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Department of Computer Science</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        nav a:not(:last-child):after {
+            content: "|";
+            margin-left: 5px;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .section-title {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .filter-options {
+            margin-bottom: 1rem;
+        }
+
+        .filter-options select {
+            padding: 0.5rem;
+            margin-right: 1rem;
+        }
+
+        .course-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .course-item {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 2rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: row;
+            }
+
+            nav a {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 0.5rem 1rem;
+            }
+
+            nav a {
+                padding: 4px;
+            }
+        }
+
+        /* Default font size for desktop */
+        nav a {
+            font-size: 16px;
+        }
+
+        /* Font size for mobile */
+        @media (max-width: 600px) {
+            nav a {
+                font-size: 12px;
+            }
+        }
+
+        <style>body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .section-title {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .filter-options {
+            margin-bottom: 1rem;
+        }
+
+        .filter-options select {
+            padding: 0.5rem;
+            margin-right: 1rem;
+        }
+
+        .course-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .course-item {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            margin-bottom: 1rem;
+        }
+
+        .page-section {
+            margin: 0;
+            border-top: 0px solid #e0e0e0;
+            border-bottom: 0px solid #e0e0e0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-fullwidth {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .element-size-25,
+        .element-size-50,
+        .element-size-75,
+        .element-size-100 {
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        .element-size-25 {
+            flex: 0 0 25%;
+        }
+
+        .element-size-50 {
+            flex: 0 0 50%;
+        }
+
+        .element-size-75 {
+            flex: 0 0 75%;
+        }
+
+        .element-size-100 {
+            flex: 0 0 100%;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 2rem;
+            font-size: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .cs-heading-sec {
+            border-bottom: 1px solid #ebebe9;
+        }
+
+        .cs-heading-sec h1 {
+            color: #1e73be;
+        }
+
+        .cs-services {
+            display: flex;
+            align-items: center;
+        }
+
+        .cs-services .text {
+            margin-left: 1rem;
+        }
+
+        .cs-seprator .devider1 {
+            height: 1px;
+            background-color: #ebebe9;
+        }
+
+        /* Default font size for desktop */
+        nav a {
+            font-size: 16px;
+        }
+
+        /* Font size for mobile */
+        @media (max-width: 600px) {
+            nav a {
+                font-size: 12px;
+            }
+        }
+    </style>
+    <script>
+    </script>
+</head>
+
+<body>
+<header>
+        <h1>Courses - Department of Computer Science</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="https://gsu.edu.ng/home/staff-list-73/">Staffs</a>
+        <a href="Courses.html">Courses</a>
+        <a href="Online-classes.html">Online Classes</a>
+        <a href="https://briateksms.com/gsu">Student Portal</a>
+    </nav>
+    <div class="page-section">
+        <div class="container">
+            <div class="section-fullwidth">
+                <div class="element-size-25">
+                    <article>
+                        <figure>
+                            <img alt="Head of Department" src="web images/Staffs/HOD.jpeg">
+                            <figcaption>
+                                <h4>Dr. Mustapha Isma'il</h4>
+                                Head of Department
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+                <div class="element-size-75">
+                    <div class="cs-heading-sec">
+                        <h1>About Computer Science Department</h1>
+                        <p>Computer Science is fundamental to the development of science and technology all over the
+                            world today. Computers are used as veritable tools for the advancement of Science and
+                            Technology. With the Microprocessor revolution that resulted in the popularity of the
+                            personal computers and the popular use of Internet, the knowledge of Computer and
+                            Information Technology today is necessary in order to survive the challenge of the digital
+                            world. The objectives of the B.Sc. (Hons) Computer Science programme has, therefore been
+                            summarized as follows:</p>
+                        <ul>
+                            <li>To promote teaching and research in Computer Science with an emphasis to meet the
+                                educational, economic and social objectives of the state as well as that of the nation
+                                as a whole.</li>
+                            <li>To keep pace with expanding frontiers of information technology across the world.</li>
+                            <li>To provide qualified work force in the country to take it to new heights in the various
+                                developmental activities and thereby increasing the quality of life of the people.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="element-size-100">
+                    <div class="cs-heading-sec">
+                        <h1>Objectives</h1>
+                        <ul>
+                            <li>To provide a broad and balanced foundation in Computer Science knowledge and practical
+                                skills in order to meet up with industrial demands.</li>
+                            <li>To provide the much needed qualified workforce including teachers for primary, secondary
+                                schools and institutions of higher learning.</li>
+                            <li>To produce computer professionals who are self-reliant to take care of the needs of
+                                various disciplines.</li>
+                            <li>To improve the quality and capacity of the workforce in the state civil service and also
+                                in other spheres of the needs of the country.</li>
+                            <li>To train graduates who are competent in computer and related courses that can pursue
+                                postgraduate programmes in computer science and related courses.</li>
+                            <li>To produce graduates that are research-oriented and can compete favorably with their
+                                counterparts elsewhere in the world.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="element-size-100">
+                    <div class="cs-spreater">
+                        <div class="top-border"></div>
+                    </div>
+                </div>
+                <div class="element-size-50">
+                    <div class="cs-heading-sec">
+                        <h1>Mission</h1>
+                        <p>The mission of the Programme is to impact the training of Computer Science to keep pace with
+                            other countries in the advancement of modern information technology and effective use.</p>
+                    </div>
+                </div>
+                <div class="element-size-50">
+                    <div class="cs-heading-sec">
+                        <h1>Vision</h1>
+                        <p>To produce graduates that will keep the moral of the country high by achieving modern
+                            technological advancement.</p>
+                    </div>
+                </div>
+                <div class="element-size-100">
+                    <div class="cs-spreater">
+                        <div class="top-border"></div>
+                    </div>
+                </div>
+                <div class="element-size-50">
+                    <div class="cs-services">
+                        <figure>
+                            <a href="#"><i class="icon-2x"></i></a>
+                        </figure>
+                        <div class="text">
+                            <a href="#">
+                                <h4>Admission Requirements</h4>
+                            </a>
+                            <p>
+                                B.Sc. (HONS) Computer Science:
+                            <ul>
+                                <li>Direct Entry: Two 'A' level passes in Science Subjects including Mathematics, OR NCE
+                                    at not less than lower credit level in Mathematics and one other Science or Social
+                                    Science subject.</li>
+                                <li>UTME: Five 'O' level credit passes to include English language, Mathematics, Physics
+                                    and at least two (2) subjects from Chemistry, Economics, and Geography.</li>
+                                <li>Any other requirement as may be specified by the senate of the University.</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="element-size-50">
+                    <div class="cs-services">
+                        <figure>
+                            <a href="#"><i class="icon-2x"></i></a>
+                        </figure>
+                        <div class="text">
+                            <a href="#">
+                                <h4>Structure and Duration</h4>
+                            </a>
+                            <p>The Duration of B.Sc. (Hons) Computer Science programme is four years except for Direct
+                                Entry students for whom it is three years. There are two semesters of formal University
+                                studies in each academic session. At 300 level, a student is expected to go for 6-month
+                                Students Industrial Work Experience Scheme (SIWES) after completion of the first
+                                semester courses at the end of which he/she has to write, present, and defend a report
+                                on what he/she did or learnt in the industry. At 400 levels, students undertake a
+                                research project in any field of interest with applications of Computer Science, besides
+                                the usual prescribed courses.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="element-size-100">
+                    <div class="cs-services">
+                        <figure>
+                            <a href="#"><i class="icon-2x"></i></a>
+                        </figure>
+                        <div class="text">
+                            <a href="#">
+                                <h4>Requirements for Graduation</h4>
+                            </a>
+                            <p>
+                            <ul>
+                                <li>For a student starting at 100 levels to graduate, he/she has to earn at least a
+                                    total of 159 credit units of which 144 must be core.</li>
+                                <li>For a Direct Entry (DE) student to graduate, he/she has to earn at least a total of
+                                    113 credit units of which 98 must be core subjects.</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div><br><br><br><br><br><br><br><br>
+    </div>
+    <footer>
+        <p>&copy; 2024 Department of Computer Science. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
