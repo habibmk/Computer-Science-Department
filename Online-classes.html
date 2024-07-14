@@ -10,6 +10,11 @@
             margin: 0;
             padding: 0;
         }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
         header {
             background-color: #4CAF50;
             color: white;
@@ -38,6 +43,20 @@
         nav a:hover {
             background-color: #ddd;
             color: black;
+        }
+        #main {
+            padding: 30px;
+            background: #fff;
+            margin-top: 30px;
+        }
+        .class-link {
+            background: #e8491d;
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px 0;
+            border-radius: 5px;
         }
         .content {
             padding: 2rem;
@@ -199,36 +218,26 @@
         <a href="https://briateksms.com/gsu">Student Portal</a>
     </nav>
 
-    <div class="content">
-        <h3 class="section-title">Please Log in to continue</h3><br>
-
-        <div id="loginForm" class="form-container">
-            <div class="filter-options">
-                <label for="level"><strong>Login As:</strong></label>
-                <select id="level" name="level" onchange="updatePlaceholder()">
-                    <option></option>
-                    <option value="lecturer">Lecturer</option>
-                    <option value="student">Student</option>
-                </select>
-                <input type="text" id="username" placeholder="">
-                <input type="password" id="password" placeholder="Password">
-                <button onclick="login()">Login</button>
-                <span class="link" onclick="showResetForm()">Forgot Password?</span>
-            </div>
-        </div>
-
-        <div id="resetForm" class="form-container hidden">
-            <h4>Reset Password</h4>
-            <input type="email" id="email" placeholder="Email">
-            <button onclick="resetPassword()">Reset Password</button>
-            <span class="link" onclick="showLoginForm()">Back to Login</span>
-            <span class="link" onclick="retrieveApplicationNumber()">Retrieve Application Number</span>
-        </div>
-
-        <div id="loading" class="loading">
-            <p>Loading...</p>
-        </div>
-    </div>
+    <div id="main" class="container">
+        <h2>Upcoming Classes</h2>
+        <ul>
+            <li>
+                <h3>Mathematics - Algebra</h3>
+                <p>Lecturer: John Doe</p>
+                <a href="https://example.com/class1" target="_blank" class="class-link">Join Class</a>
+            </li>
+            <li>
+                <h3>Physics - Quantum Mechanics</h3>
+                <p>Lecturer: Jane Smith</p>
+                <a href="https://example.com/class2" target="_blank" class="class-link">Join Class</a>
+            </li>
+            <li>
+                <h3>Chemistry - Organic Chemistry</h3>
+                <p>Lecturer: Emily Johnson</p>
+                <a href="https://example.com/class3" target="_blank" class="class-link">Join Class</a>
+            </li>
+        </ul>
+    </div><br><br><br><br><br>
 
     <footer style="font-size: 10px; text-align: center;">
     <p>&copy; 2024 Department of Computer Science. All rights reserved.</p>
