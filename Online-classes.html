@@ -5,130 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Classes - Department of Computer Science</title>
     <style>
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
         }
+
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 1rem 2rem;
+            padding: 1.5rem 0;
             text-align: center;
+            margin-bottom: 30px;
+            border-radius: 8px 8px 0 0;
         }
+
         nav {
             display: flex;
             justify-content: center;
             background-color: #333;
+            border-radius: 0 0 8px 8px;
+            margin-bottom: 20px;
         }
+
         nav a {
             color: white;
-            padding: 14px 20px;
+            padding: 1rem;
             text-decoration: none;
             text-align: center;
+            transition: background-color 0.3s ease;
         }
-        nav a {
-            text-decoration: none;
-            margin: 0 5px;
-        }
+
         nav a:not(:last-child):after {
             content: "|";
-            margin-left: 5px;
+            margin: 0 10px;
+            color: #ccc;
         }
+
         nav a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #555;
         }
+
         #main {
-            padding: 30px;
-            background: #fff;
-            margin-top: 30px;
+            padding: 20px;
         }
+
+        .class-item {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
         .class-link {
-            background: #e8491d;
-            color: #fff;
-            padding: 10px;
-            text-decoration: none;
             display: inline-block;
-            margin: 5px 0;
+            background-color: #e8491d;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
             border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
         }
-        .content {
-            padding: 2rem;
-            text-align: center;
+
+        .class-link:hover {
+            background-color: #c43a11;
         }
-        .section-title {
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        .form-container {
-            max-width: 400px;
-            margin: 0 auto;
-            text-align: left;
-        }
-        .form-container input {
-            width: 100%;
-            padding: 0.5rem;
-            margin: 0.5rem 0;
-        }
-        .form-container button {
-            width: 100%;
-            padding: 0.7rem;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .form-container button:hover {
-            background-color: #45a049;
-        }
-        .link {
-            color: #4CAF50;
-            cursor: pointer;
-            display: block;
-            text-align: center;
-            margin-top: 1rem;
-        }
-        .hidden {
-            display: none;
-        }
-        .loading {
-            display: none;
-            text-align: center;
-            margin-top: 1rem;
-        }
+
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 1rem 2rem;
+            padding: 1rem 0;
             position: fixed;
             bottom: 0;
             width: 100%;
+            font-size: 12px;
         }
-        /* Responsive design */
+
         @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
             nav {
-                flex-direction: row;
+                flex-wrap: wrap;
             }
 
             nav a {
-                padding: 10px;
+                flex: row;
+                text-align: center;
             }
         }
 
         @media (max-width: 480px) {
             header {
-                padding: 0.5rem 1rem;
+                padding: 1rem 0;
             }
 
             nav a {
-                padding: 4px;
+                padding: 0.5rem;
+            }
+
+            .class-link {
+                padding: 8px 16px;
             }
         }
         /* Default font size for desktop */
@@ -139,72 +130,13 @@
         /* Font size for mobile */
         @media (max-width: 600px) {
             nav a {
-                font-size: 12px;
+                font-size: 10px;
             }
         }
-    </style>    
-    <script>
-        function showLoading() {
-            document.getElementById('loading').style.display = 'block';
-        }
-
-        function hideLoading() {
-            document.getElementById('loading').style.display = 'none';
-        }
-
-        function showLoginForm() {
-            hideLoading();
-            document.getElementById('loginForm').classList.remove('hidden');
-            document.getElementById('resetForm').classList.add('hidden');
-        }
-
-        function showResetForm() {
-            hideLoading();
-            document.getElementById('resetForm').classList.remove('hidden');
-            document.getElementById('loginForm').classList.add('hidden');
-        }
-
-        function login() {
-            showLoading();
-            setTimeout(() => {
-                hideLoading();
-                alert("Logged in successfully!");
-                // Handle successful login logic here
-            }, 2000);
-        }
-
-        function resetPassword() {
-            showLoading();
-            setTimeout(() => {
-                hideLoading();
-                alert("Password reset link sent!");
-                // Handle successful password reset logic here
-            }, 2000);
-        }
-
-        function retrieveApplicationNumber() {
-            showLoading();
-            setTimeout(() => {
-                hideLoading();
-                alert("Application number retrieved!");
-                // Handle successful application number retrieval here
-            }, 2000);
-        }
-
-        function updatePlaceholder() {
-            var select = document.getElementById('level');
-            var usernameInput = document.getElementById('username');
-            var selectedOption = select.options[select.selectedIndex].value;
-
-            if (selectedOption === 'lecturer') {
-                usernameInput.placeholder = 'Username';
-            } else if (selectedOption === 'student') {
-                usernameInput.placeholder = 'Registration Number';
-            }
-        }
-    </script>
+    </style>
 </head>
-<body onload="showLoginForm()">
+<body>
+    
 
     <header>
         <h1>Online Classes - Department of Computer Science</h1>
@@ -212,36 +144,63 @@
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="https://gsu.edu.ng/home/staff-list-73/">Staffs</a>
+        <a href="https://gsu.edu.ng/home/staff-list-73/">Staff</a>
         <a href="Courses.html">Courses</a>
         <a href="Online-classes.html">Online Classes</a>
         <a href="https://briateksms.com/gsu">Student Portal</a>
     </nav>
-
-    <div id="main" class="container">
-        <h2>Upcoming Classes</h2>
+    <div id="main" class="container" style="width: 85%;">
+        <h2>Upcoming Classes!</h2>
+        <ul></ul></div>
+    <div id="main" class="container" style="width: 85%;">
         <ul>
-            <li>
+            <li class="class-item">
                 <h3>Mathematics - Algebra</h3>
                 <p>Lecturer: John Doe</p>
-                <a href="https://example.com/class1" target="_blank" class="class-link">Join Class</a>
+                <p>Date: July 15, 2024</p>
+                <p>Time: 10:00 AM - 12:00 PM</p>
+                <div class="notice-box">
+                    <p><strong>Notice:</strong> Please prepare your questions beforehand.</p>
+                </div>
             </li>
-            <li>
+            <a href="https://example.com/class1" target="_blank" class="class-link">Join Class</a>
+        </ul>
+    </div>
+
+    <div id="main" class="container" style="width: 85%;">
+        <ul>
+            <li class="class-item">
                 <h3>Physics - Quantum Mechanics</h3>
                 <p>Lecturer: Jane Smith</p>
-                <a href="https://example.com/class2" target="_blank" class="class-link">Join Class</a>
+                <p>Date: July 16, 2024</p>
+                <p>Time: 2:00 PM - 4:00 PM</p>
+                <div class="notice-box">
+                    <p><strong>Notice:</strong> Review Chapter 5 for a quiz at the beginning.</p>
+                </div>
             </li>
-            <li>
+                <a href="https://example.com/class2" target="_blank" class="class-link">Join Class</a>
+            
+        </ul>
+    </div>
+    <div id="main" class="container" style="width: 85%;">
+        <ul>
+            <li class="class-item">
                 <h3>Chemistry - Organic Chemistry</h3>
                 <p>Lecturer: Emily Johnson</p>
-                <a href="https://example.com/class3" target="_blank" class="class-link">Join Class</a>
+                <p>Date: July 17, 2024</p>
+                <p>Time: 9:00 AM - 11:00 AM</p>
+                <div class="notice-box">
+                    <p><strong>Notice:</strong> Lab session immediately after the lecture.</p>
+                </div>
             </li>
+                <a href="https://example.com/class3" target="_blank" class="class-link">Join Class</a>
+        
         </ul>
-    </div><br><br><br><br><br>
+    </div>
 
-    <footer style="font-size: 10px; text-align: center;">
-    <p>&copy; 2024 Department of Computer Science. All rights reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; 2024 Department of Computer Science. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
