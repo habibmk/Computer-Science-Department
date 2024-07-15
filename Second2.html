@@ -3,63 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Semester - 100 Level</title>
+    <title>Second Semester - 200Level</title>
     <style>
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 1rem 2rem;
+            padding: 1.5rem 0;
             text-align: center;
+            margin-bottom: 30px;
+            border-radius: 8px 8px 0 0;
         }
-        .content {
-            padding: 2rem;
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #4CAF50;
+            border-radius: 0 0 8px 8px;
+            margin-bottom: 20px;
         }
-        .pdf-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        .pdf-item {
-            padding: 1rem;
-            border: 1px solid #ddd;
-            margin-bottom: 1rem;
-        }
-        footer {
-            background-color: #333;
+
+        nav a {
             color: white;
+            padding: 1rem;
+            text-decoration: none;
             text-align: center;
-            padding: 1rem 2rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:not(:last-child):after {
+            content: "|";
+            margin: 0 10px;
+            color: #ccc;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        #main {
+            padding: 20px;
+        }
+
+        .class-item {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .class-link {
+            display: inline-block;
+            background-color: #e8491d;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .class-link:hover {
+            background-color: #c43a11;
+        }
+
+        footer {
+                background-color: #4CAF50;
+                color: white;
+                text-align: center;
+                padding: 0.5rem;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                font-size: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                flex: row;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem 0;
+            }
+
+            nav a {
+                padding: 0.5rem;
+            }
+
+            .class-link {
+                padding: 8px 16px;
+            }
+        }
+        /* Default font size for desktop */
+        nav a {
+            font-size: 16px;
+        }
+
+        /* Font size for mobile */
+        @media (max-width: 600px) {
+            nav a {
+                font-size: 10px;
+            }
         }
     </style>
 </head>
 <body>
+    
 
     <header>
-        <h1>Second Semester - 200 Level</h1>
+        <h1>Second Semester - 200Level</h1>
     </header>
 
-    <div class="content">
-        <h3>Download Course Materials</h3>
-        <ul class="pdf-list">
-            <li class="pdf-item">
-                <a href="path/to/your/file1.pdf" download="CourseMaterial1.pdf">Course Material 1</a>
+    <nav>
+    <div id="main" class="container" style="width: 85%;">
+        <h1>Course Materials</h1>
+        <h6>Note!!! lecturer may decide to change his material</h6>
+        <ul></ul></div>
+    <div id="main" class="container" style="width: 85%;">
+        <ul>
+            <li class="class-item">
+                <h3>Coming Soon</h3>
             </li>
-            <li class="pdf-item">
-                <a href="path/to/your/file2.pdf" download="CourseMaterial2.pdf">Course Material 2</a>
-            </li>
-            <li class="pdf-item">
-                <a href="path/to/your/file3.pdf" download="CourseMaterial3.pdf">Course Material 3</a>
-            </li>
-            <!-- Add more PDF items as needed -->
+            <a href="https://example.com/class1" target="_blank" class="class-link">Download</a>
         </ul>
-    </div>
+    </div><br><br><br>
 
     <footer>
         <p>&copy; 2024 Department of Computer Science. All rights reserved.</p>
@@ -67,4 +162,3 @@
 
 </body>
 </html>
-  
