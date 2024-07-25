@@ -2,370 +2,353 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Department of Computer Science</title>
-    <style>
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HABIB MUHAMMAD</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #000;
+      background-color:  #fbfcfc;
+      line-height: 1.6;
+    }
 
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1rem 2rem;
-            text-align: center;
-            text-align: center;
-            margin-bottom: 30px;
-            border-radius: 8px 8px 0 0;
-        }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      border-radius: 0 0 20px 20px;
+      background-color:  #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #4CAF50;
-            border-radius: 0 0 8px 8px;
-            margin-bottom: 20px;
-        }
+    }
 
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-        }
+    .navbar-brand a {
+      text-decoration: none;
+      color: #000;
+      font-weigh: bold;
+      font-size: 24px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    nav a:not(:last-child): after {
+      content: " | ";
+      margin-right: 20px;
+    }
+    .
 
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
+    .nav-items {
+      display: flex;
+      gap: 10px;
+    }
 
-        nav a {
-            text-decoration: none;
-            margin: 0 5px;
-        }
+    .nav-item {
+      text-decoration: none;
+      color: #000;
+      font-size: 12px;
+    }
 
-        nav a:not(:last-child):after {
-            content: "|";
-            margin-left: 5px;
-        }
+    .page-section {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 2rem 1rem;
+    }
 
-        .banner {
-            padding: 2rem;
-            text-align: center;
-            background-color: #f4f4f4;
-        }
+    .element-size-25,
+    .element-size-50,
+    .element-size-75,
+    .element-size-100 {
+      padding: 1rem;
+      box-sizing: border-box;
+    }
 
-        .announcements,
-        .featured-courses,
-        .quick-links {
-            padding: 2rem;
-        }
+    .element-size-25 {
+      flex: 0 0 25%;
+    }
 
-        .section-title {
-            margin-bottom: 1rem;
-            color: #333;
-        }
+    .element-size-50 {
+      flex: 0 0 50%;
+    }
 
-        .course-item,
-        .quick-link-item {
-            margin-bottom: 1rem;
-        }
+    .element-size-75 {
+      flex: 0 0 75%;
+    }
 
-        footer {
-                background-color: #4CAF50;
-                color: white;
-                text-align: center;
-                padding: 0.5rem;
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-                font-size: 10px;
-        }
+    .element-size-100 {
+      flex: 0 0 100%;
+    }
 
-        /* Slideshow styles */
-        .slideshow-container {
-            max-width: 100%;
-            position: center;
-            margin-top: 10px;
-            overflow: hidden;
-            white-space: nowrap;
-        }
+    .social-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
 
-        .mySlides {
-            display: none;
-            width: 100%;
-        }
+    .social-container p {
+      margin: 0;
+      font-size: 1rem;
+      color: #000;
+    }
 
-        .mySlides img {
-            width: 100%;
-            vertical-align: top;
-        }
+    .social-icons {
+      display: flex;
+      gap: 0.5rem;
+    }
 
-        /* Modal-like notification */
-        .notification-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.2);
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s, transform 0.3s;
+    }
 
-        .notification {
-            position: relative;
-            max-width: 400px;
-            padding: 1rem;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border-radius: 10px;
-            text-align: center;
-            z-index: 10000;
-        }
+    .social-icons a:hover {
+      background-color: white;
+      transform: scale(1.1);
+    }
 
-        .notification p {
-            margin: 0;
-        }
+    .social-icons svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+      transition: fill 0.3s;
+    }
 
-        .cancel-btn {
-            cursor: pointer;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: red;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-weight: italic;
-        }
+    .social-icons a:hover svg {
+      fill: #fff;
+    }
 
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-            }
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-            to {
-                transform: translateX(0);
-            }
-        }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: row;
-            }
+    .project-card h3 a {
+      text-decoration: none;
+      color: #000;
+      font-size: 1.25rem;
+      transition: color 0.3s;
+    }
 
-            nav a {
-                padding: 10px;
-            }
+    .project-card h3 a:hover {
+      color: #0056b3;
+    }
 
-            .banner {
-                padding: 1rem;
-            }
+    .project-card p {
+      color: #666;
+      font-size: 1rem;
+    }
 
-            .announcements,
-            .featured-courses,
-            .quick-links {
-                padding: 1rem;
-            }
+    .footer {
+      background:  #fff;
+      color: #000;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.1);
+    }
 
-            .notification {
-                max-width: 90%;
-                padding: 0.5rem;
-            }
-        }
+    .footer p {
+      margin: 0;
+      font-size: 0.875rem;
+    }
 
-        @media (max-width: 480px) {
-            header {
-                padding: 0.5rem 1rem;
-            }
+    .footer a {
+      color: #0056b3;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-            nav a {
-                padding: 4px;
-            }
+    .footer a:hover {
+      text-decoration: underline;
+    }
 
-            .banner {
-                padding: 0.5rem;
-            }
+    @media (max-width: 768px) {
 
-            .announcements,
-            .featured-courses,
-            .quick-links {
-                padding: 0.5rem;
-            }
+      .element-size-25,
+      .element-size-50,
+      .element-size-75,
+      .element-size-100 {
+        padding: 0.5rem;
+      }
 
-            .notification {
-                padding: 0.5rem;
-            }
-        }
+      .element-size-25 {
+        flex: 0 0 50%;
+      }
 
-        /* Default font size for desktop */
-        nav a {
-            font-size: 16px;
-        }
+      .element-size-50 {
+        flex: 0 0 100%;
+      }
 
-        /* Font size for mobile */
-        @media (max-width: 600px) {
-            nav a {
-                font-size: 12px;
-            }
-        }
-    </style>
+      .element-size-75 {
+        flex: 0 0 100%;
+      }
 
-    <script>
-        var slideIndex = 0;
-
-        function showSlides() {
-            var slides = document.getElementsByClassName("mySlides");
-            for (var i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            slides[slideIndex - 1].style.display = "block";
-            slides[slideIndex - 1].style.animation = "slideIn 1s ease";
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
-        }
-
-        // Function to show the notification on page load
-        document.addEventListener('DOMContentLoaded', function () {
-            showSlides();
-            showNotification();
-        });
-
-        // Function to show the notification
-        function showNotification() {
-            var overlay = document.getElementById('notificationOverlay');
-            var notification = document.getElementById('notification');
-            overlay.style.display = 'flex'; // show overlay
-            notification.style.display = 'block'; // show notification
-        }
-
-        // Function to hide the notification
-        function hideNotification() {
-            var overlay = document.getElementById('notificationOverlay');
-            var notification = document.getElementById('notification');
-            overlay.style.display = 'none'; // hide overlay
-            notification.style.display = 'none'; // hide notification
-        }
-    </script>
+      .project-card {
+        margin-bottom: 0.5rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-    <header>
-        <h1>Department of Computer Science</h1>
-    </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="https://gsu.edu.ng/home/staff-list-73/">Staffs</a>
-        <a href="Courses.html">Courses</a>
-        <a href="Online-classes.html">Online Classes</a>
-        <a href="https://briateksms.com/gsu">Student Portal</a>
-    </nav>
-
-    <div class="banner">
-        <h2>Welcome to the Department of Computer Science</h2>
-        <p>Your journey to excellence in computer science begins here!</p>
+  <nav class="navbar">
+        <h1 class="navbar-brand">
+            <a href="#">Prixima</a>
+        </h1> 
+</div>
+    <div class="nav-items">
+      <a href="index.html" class="nav-item">| Home</a>
+      <a href="blog.html" class="nav-item">| Blog |</a>
     </div>
+  </nav>
 
-    <!-- Slideshow container -->
-    <div class="slideshow-container">
-        <div class="mySlides">
-            <img src="web images/Gallery/ICT ENTRANCE.jpeg" alt="Slide 1">
+
+  <div class="element-size-75">
+    <div class="cs-heading-sec"><br><br><br>
+      <h1>Hello World!</h1>
+      <p>Hi there 👋,<br><br>I'm Habib Muhammad, the founder of Prixima. I am a passionate web developer based in Nigeria. With a dedication to web development and a commitment to innovation, I transform ideas into exceptional online experiences.<br><br>
+
+      🎶 Spotify jams + half-baked side-projects = my vibe! 😅. I'm living my best life in VSCode & Replit while vibing with open-source tech. 🚀</p>
+
+      <div class="social-container">
+        <p class="leading-none">You can keep up with me here:</p>
+        <div class="social-icons">
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="RSS">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="#0056b3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+              <path d="M4 4a16 16 0 0 1 16 16"></path>
+              <path d="M4 11a9 9 0 0 1 9 9"></path>
+            </svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="#0056b3" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5">
+              </path>
+            </svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="#0056b3" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0 -2 -2a2 2 0 0 0 -2 2v6h-4v-6a6 6 0 0 1 6 -6z">
+              </path>
+              <path d="M2 9h4v12h-4z"></path>
+              <path d="M4 4m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+            </svg>
+          </a>
+
+          <a href="https://www.facebook.com/habiib.fb?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="#0056b3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2c-5.5 0-10 4.5-10 10s4.5 10 10 10c5.5 0 10-4.5 10-10s-4.5-10-10-10zm.5 17v-6h-2v-2h2v-1.5c0-1.5.5-2.5 2-2.5h1.5v2h-1.5c-.5 0-1 .5-1 1v1.5h2l-.5 2h-1.5z"></path>
+            </svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="#0056b3" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M22 4.01c-.77.35-1.6.59-2.46.69a4.32 4.32 0 0 0 1.91-2.38 8.58 8.58 0 0 1-2.72 1.04 4.28 4.28 0 0 0-7.3 3.9 12.14 12.14 0 0 1-8.82-4.48 4.27 4.27 0 0 0 1.32 5.7 4.21 4.21 0 0 1-1.94-.54v.05a4.28 4.28 0 0 0 3.44 4.18 4.27 4.27 0 0 1-1.93.07 4.29 4.29 0 0 0 4 2.96A8.61 8.61 0 0 1 2 19.13a12.13 12.13 0 0 0 6.56 1.92c7.87 0 12.17-6.53 12.17-12.2 0-.19-.01-.37-.02-.56A8.62 8.62 0 0 0 22 4.01z">
+              </path>
+            </svg>
+          </a>
         </div>
-        <div class="mySlides">
-            <img src="web images/Gallery/LABS.jpeg" alt="Slide 2">
+      </div>
+      <br><br><br>
+
+
+        <div >
+          <h1 style="color: #0056b3;" >PROJECTs</h1>
         </div>
-        <div class="mySlides">
-            <img src="web images/Gallery/NITDA2.jpeg" alt="Slide 3">
+
+
+        <div class="element-size-50">
+          <div class="project-card">
+            <h3><a href="https://habibmk.github.io/Computer-Science-Department/index.html">Department of
+                Computer Science</a></h3>
+            <p>🚀 Just launched a website for the Computer Science Department at Gombe State University! HTML, CSS, and JavaScript FTW! 💻🎉</p>
+          </div>
         </div>
-        <div class="mySlides">
-            <img src="web images/Gallery/NITDA.jpeg" alt="Slide 4">
+
+        <div class="element-size-50">
+          <div class="project-card">
+            <h3><a href="https://habibmk.github.io/Computer-Science-Department/index.html">Personal
+                Website</a></h3>
+            <p>Check out my personal website—it's all HTML!</p>
+          </div>
         </div>
-        <div class="mySlides">
-            <img src="web images/Gallery/VISUAL REALITY-BASED.jpeg" alt="Slide 5">
+
+
+
+        <div class="element-size-50">
+          <div class="project-card">
+            <h3><a href="https://habibmk.github.io/uploading/index.html">Uploading..</a></h3>
+            <p>Site under construction!</p>
+          </div>
         </div>
-        <div class="mySlides">
-            <img src="web images/Gallery/ICT COMP. LAB.jpeg" alt="Slide 6">
+
+        <div class="element-size-50">
+          <div class="project-card">
+            <h3><a href="https://habibmk.github.io/uploading/index.html">Uploading...</a></h3>
+            <p>Site under construction</p>
+          </div>
         </div>
+
+
+      <br><br><br>
+      <h4 style="font-size: 20px;
+        color: #0056b3;">Services</h4>
+      <ul>
+        <li>Prototyping</li>
+        <li>Wireframing</li>
+        <li>UI Design</li>
+        <li>Front-end Development</li>
+        <li>Motion</li>
+        <li>UI Testing</li>
+      </ul>
     </div>
+  </div>
+  </div>
+  </div>
+  </div>
 
-    <div class="featured-courses">
-        <h1 class="section-title">Featured Courses</h1><br>
-        <div class="course-item">
-            <h4>Introduction to Computer Science (COSC 101)</h4>
-            <p>A beginner's guide to the world of computer science.</p>
-        </div>
-        <div class="course-item">
-            <h4>Data Structures and Algorithms (COSC 208)</h4>
-            <p>Learn about essential data structures and algorithms.</p>
-        </div>
-        <div class="course-item">
-            <h4>Web Development (C0SC 319)</h4>
-            <p>Build dynamic and responsive websites from scratch.</p>
-        </div>
-    </div>
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> HABIB MUHAMMAD. All rights reserved. | <a href="#">Privacy Policy</a> | <a
+        href="#">Terms of Service</a></p>
+  </footer>
 
-    <div class="quick-links">
-        <h3 class="section-title">Quick Links</h3>
-        <div class="quick-link-item">
-            <a href="https://gsu.edu.ng/home/admissions/">Admission</a>
-        </div>
-        <div class="quick-link-item">
-            <a href="About.html">About - Us</a>
-        </div>
-        <div class="quick-link-item">
-            <a href="https://gsu.edu.ng/home/upcoming-events/">Up Coming Events </a>
-        </div>
-    </div>
-
-    <!-- Modal-like notification -->
-    <div id="notificationOverlay" class="notification-overlay">
-        <div id="notification" class="notification">
-            <span class="cancel-btn" onclick="hideNotification()">X</span>
-            <marquee direction="up" scrollamount="5" scrolldelay="250">
-                <p>
-                    <strong>Date: 08th July, 2024.</strong><br><br>
-                    <strong>SUBMISSION OF SIGNED COURSE REGISTRATION FORMS</strong><br><br>
-
-                    The department has observed that a significant number of students have not yet submitted their
-                    course registration forms.<br><br>
-
-                    Consequently, a final deadline has been set for the submission of signed course registration forms,
-                    which is <strong>Thursday, 1st August 2024.</strong><br><br>
-                    Students are required to submit the forms to their respective level coordinators by this date.
-                    Please note that compliance with this requirement is mandatory.<br><br>
-
-                    Thank you.<br><br><br>
-                    Yours Sincerely,<br>
-                    Muhammad Dawaki<br>
-                    Department Registration Officer.<br><br>
-
-                    Send your feedback regarding this website to: <a href=”https://t.me/habib_Mk”>Telegram</a> or <a
-                        href=”https:/wa.me/+2349061282828”>WhatsApp</a>.<br><br>
-                </p>
-            </marquee>
-        </div>
-    </div><br><br><br><br><br>
-
-    <footer>
-        <p>© 2024 Department of Computer Science. All rights reserved.</p>
-    </footer>
-
+  <script>
+    // Script to set the current year in the footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
